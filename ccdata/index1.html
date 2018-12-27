@@ -36,24 +36,24 @@ function Circle(x,y,dx,dy,radius,color){
   this.x = x;
   this.y = y;
   this.dx = dx;
-  this.dy = dy;
+  this.dy = dy;window.alert("1");
   this.radius = radius;
   this.color = colors[Math.floor(Math.random() * colors.length)];
-    window.alert("1");
   this.draw = function(){
+    window.alert("1");
     ctx.beginPath();
 	ctx.arc(this.x,this.y,this.radius,0,Math.PI * 2);
 	ctx.fillStyle = this.color;
 	ctx.fill();
-  }
+  };
   this.move = function(){
 	if((this.x + dx - radius) < 0 || (this.x + dx + radius) > innerWidth || (this.y + dy - radius) < 0 || (this.y + radius + dy) > innerHeight){
 	  this.dx = -dx;
 	  this.dy = -dy;
-	}
 	  this.x += dx;
 	  this.y += dy;
-  }
+	}
+  };
 }
 Circle(20,20,20,20,10,"red").draw;
 /*
