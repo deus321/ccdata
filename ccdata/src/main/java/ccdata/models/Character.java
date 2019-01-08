@@ -7,10 +7,10 @@ public class Character {
 	private String photourl;
 	private String profilephotourl;
 	private String affilition;
-	private Integer rate;
+	private int rate;
 	private String weapon;
 	private String introduction;
-	private Integer cost;
+	private int cost;
 	private String painter;
 	private String voiceactor;
 	private String criticalstrike;
@@ -20,7 +20,7 @@ public class Character {
 	private Date showdate;
 	private String uniqueskill;
 	private String uniqueskilldscription;
-	private Integer manacost;
+	private int manacost;
 	private String teachingskill;
 	private String teachingskilldescription;
 	private String ability1;
@@ -30,6 +30,13 @@ public class Character {
 	private String feter;
 	private String feterdescription;
 	private String partyability;
+	private int pid;
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
 	public String getName() {
 		return name;
 	}
@@ -42,7 +49,7 @@ public class Character {
 	public String getAffilition() {
 		return affilition;
 	}
-	public Integer getRate() {
+	public int getRate() {
 		return rate;
 	}
 	public String getWeapon() {
@@ -51,7 +58,7 @@ public class Character {
 	public String getIntroduction() {
 		return introduction;
 	}
-	public Integer getCost() {
+	public int getCost() {
 		return cost;
 	}
 	public String getPainter() {
@@ -81,7 +88,7 @@ public class Character {
 	public String getUniqueskilldscription() {
 		return uniqueskilldscription;
 	}
-	public Integer getManacost() {
+	public int getManacost() {
 		return manacost;
 	}
 	public String getTeachingskill() {
@@ -123,7 +130,7 @@ public class Character {
 	public void setAffilition(String affilition) {
 		this.affilition = affilition;
 	}
-	public void setRate(Integer rate) {
+	public void setRate(int rate) {
 		this.rate = rate;
 	}
 	public void setWeapon(String weapon) {
@@ -132,7 +139,7 @@ public class Character {
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
-	public void setCost(Integer cost) {
+	public void setCost(int cost) {
 		this.cost = cost;
 	}
 	public void setPainter(String painter) {
@@ -162,7 +169,7 @@ public class Character {
 	public void setUniqueskilldscription(String uniqueskilldscription) {
 		this.uniqueskilldscription = uniqueskilldscription;
 	}
-	public void setManacost(Integer manacost) {
+	public void setManacost(int manacost) {
 		this.manacost = manacost;
 	}
 	public void setTeachingskill(String teachingskill) {

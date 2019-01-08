@@ -6,7 +6,8 @@ import ccdata.models.Character;
 public class testCharacterBean {
 	public static void main(String[] args) throws SQLException {
 		Character c = new Character();
-		c.setName("fffff");
-		CharacterDao.addCharacter(c);
+		c.setName("fff");
+		c.setPid(5);
+		CharacterDao.delCharacter(c);
 	}
 }
