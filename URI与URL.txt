@@ -1,0 +1,56 @@
+URI : 统一资源标识符（Uniform Resource Identifier）是一个用于标识某一互联网资源名称的字符串。
+Web上可用的每种资源 -HTML文档、图像、视频片段、程序等 - 由一个通用资源标识符
+（Uniform Resource Identifier, 简称"URI"）进行定位。
+
+URI一般由三部分组成：
+一、主机名。
+存放资源的自身的名称，由路径表示。
+参考下面的URI，它符合当前的RFC4395规范:协议名称://域名.根域名/目录/文件名.后缀
+例如http://b.c/d/e.f （假设b.c是一个可用的域名，e.f是一个标准的文件）
+这个URI是这样的：这是一个可通过HTTP协议访问的资源，位于主机b.c上，通过URI中的字符串“/d”访问主机上的“d”文件夹，通过“e.f”请求访问主机上“/d/e.f”这个文件。
+这是URI的另一个例子，指向一个用户的邮箱：mailto:名称@域名
+注：大多数读者可能熟悉"URL"，而不是URI。URL是URI命名机制的一个子集。
+二、标志符
+有的URI指向一个资源的内部。 这种URI以"#"结束，并跟着一个anchor标志符（称为片段标志符）。例如，下面是一个指向section_2的URI：
+协议://域名/目录/文件#片段标示符（例如：/a/b.php#a）
+三、相对URI
+相对URI不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对URI可能含有相对路径（如，“..”表示上一层路径），还可能包含片段标志符。
+为了说明相对URI，假设我们有一个基本的URI:
+协议://域名/目录a/目录b/文件c
+下面的链接中使用了相对URI：
+../文件D
+它扩展成完全的URI就是 "协议://域名/目录a/文件D"，
+下面是一个图像的相对URI：
+<IMG src="../icons/logo.gif" alt="logo">
+它扩展成完全的URI就是 "协议://域名/目录a/icons/logo.gif"。
+在HTML中，URI被用来：
+链接到另一个文档或资源(参看A和LINK元素)。
+链接到一个外部样式表或脚本(参看LINK和SCRIPT元素)。
+在页内包含图像、对象或applet(参看IMAGE、OBJECT、APPLET和INPUT元素)。
+建立图像映射(参看MAP和AREA元素)。
+提交一个表单(参看FORM)。
+建立一个框架文档(参看FRAME和IFRAME元素)。
+引用一个外部参考(参看Q、BLOCKQUOTE,INS和DEL元素)。
+指向一个描述文档的metadata(参看HEAD元素)。
+
+
+URL是Uniform Resource Locator的缩写，译为“统一资源定位符”。
+URL是Uniform Resource Locator的缩写，译为“统一资源定位符”。
+◇ URL的格式
+URL的格式由下列三部分组成：
+第一部分是协议（或称为服务方式）；
+第二部分是存有该资源的主机IP地址（有时也包括端口号）；
+第三部分是主机资源的具体地址，如目录和文件名等。
+第一部分和第二部分之间用“：//”符号隔开，第二部分和第三部分用“/”符号隔开。第一部分和第二部分是不可缺少的，第三部分有时可以省略。
+◇ URL示例
+文件的URL：
+用URL表示文件时，服务器方式用file表示，后面要有主机IP地址、文件的存取路径（即目录）和文件名等信息。有时可以省略目录和文件名，但“/”符号不能省略。
+例：ftp://a:1234/b/c/d.txt
+代表获取资源使用ftp协议，资源目标是a主机的1234端口的b目录下的c目录下的d.txt。
+HTTP的 URL已经在URI的组成中做过示范，在此不再陈述。
+
+URI、URL和URN
+URI ：Uniform Resource Identifier，统一资源标识符；
+URL：Uniform Resource Locator，统一资源定位符；
+URN：Uniform Resource Name，统一资源名称。
+其中，URL,URN是URI的子集。
