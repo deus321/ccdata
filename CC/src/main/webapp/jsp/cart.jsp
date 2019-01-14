@@ -32,7 +32,7 @@
 
 	<body>
 		<!-- 引入header.jsp -->
-		<jsp:include page="/header.jsp"></jsp:include>
+		<jsp:include page="/jsp/header.jsp"></jsp:include>
 
 		<div class="container">
 			<div class="row">
@@ -93,7 +93,7 @@
 		</div>
 
 		<!-- 引入footer.jsp -->
-		<jsp:include page="/footer.jsp"></jsp:include>
+		<jsp:include page="/jsp/footer.jsp"></jsp:include>
 
 	</body>
 

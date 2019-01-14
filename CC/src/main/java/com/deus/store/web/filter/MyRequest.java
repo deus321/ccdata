@@ -1,6 +1,8 @@
 package com.deus.store.web.filter;
 
 import java.io.UnsupportedEncodingException;
+
+
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
  */
 
 public class MyRequest extends HttpServletRequestWrapper{
+	private boolean encoded = false;
 	public MyRequest(HttpServletRequest request) {
 		super(request);
 	}
@@ -44,25 +47,33 @@ public class MyRequest extends HttpServletRequestWrapper{
 	}
 	/**
 	 * 中文乱码实现方法 
-	 * 
-	 * 
+	 * 关于 getParameterMap returns immutable map 的理解
+	 * 返回是不可变MAP其状态（属性不可变）其成员PRIVATE FINAL 该类FINAL 不可继承
+	 * 构造器赋值采用深拷贝，无SETTER方法。
+	 * 这里map内部string为不可变对象无需深拷贝，而string数组array.clone赋值初始化，
+	 * 因此引用内存地址不可变，此时改变string[]内的内容，不改变内存地址。改变方式采
+	 * 用entrySet返回Entry对象遍历值改变。
+	 * !!同一个request返回的不可变map地址不变。
 	 */
 	@Override
 	public Map<String, String[]> getParameterMap(){
 		Map<String, String[]> map = super.getParameterMap();
-		if("GET".equalsIgnoreCase(super.getMethod())) {
+		if(!encoded) {
+			if("GET".equalsIgnoreCase(super.getMethod())) {
 				for (Entry<String, String[]> entry : map.entrySet()) {
 					String[] value = entry.getValue();
 					for (String str : value) {
 						try {
-							str = new String(str.getBytes("IS0-8859-1"),"UTF-8");
+							str = new String(str.getBytes("ISO8859-1"),"UTF-8");
 						} catch (UnsupportedEncodingException e) {
 							throw new RuntimeException(e);
 						}
 					}
 					
 				}
+				encoded = true;
 			}
+		}
 		return map;
 	}
 	

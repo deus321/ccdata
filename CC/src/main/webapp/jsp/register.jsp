@@ -5,11 +5,11 @@
 <head></head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>会员注册</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" />
+<script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 <!-- 引入自定义css文件 style.css -->
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
 
 <style>
 body {
@@ -29,11 +29,35 @@ font {
 	padding: 0 10px;
 }
 </style>
+<script>
+	$(function(){
+		$("#username").blur(function(){
+			var username = $(this).val();
+			if(username != ""){
+				$.ajax({url:"${pageContext.request.contextPath}/UserServlet",{"method":"checkUsername","username":username},success:function(result){
+					if(result == 1){
+						$("#redwarning").append("该用户名未注册，请注册！").css("font-color","green");
+						
+					}else if(result == 2){
+						$("#redwarning").append("该用户名已注册，请重输！").css("font-color","red");
+					}
+				
+				}});
+			}
+			
+		
+		});
+	
+	});
+
+
+
+</script>
 </head>
 <body>
 
 	<!-- 引入header.jsp -->
-	<jsp:include page="/header.jsp"></jsp:include>
+	<jsp:include page="/jsp/header.jsp"></jsp:include>
 
 	<div class="container"
 		style="width: 100%; background: url('image/regist_bg.jpg');">
@@ -49,6 +73,7 @@ font {
 							<input type="text" class="form-control" id="username"
 								placeholder="请输入用户名">
 						</div>
+						<span class="col-sm-3" id="redwarning"><img src=""></span>
 					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
@@ -124,7 +149,7 @@ font {
 	</div>
 
 	<!-- 引入footer.jsp -->
-	<jsp:include page="/footer.jsp"></jsp:include>
+	<jsp:include page="/jsp/footer.jsp"></jsp:include>
 
 </body>
 </html>
