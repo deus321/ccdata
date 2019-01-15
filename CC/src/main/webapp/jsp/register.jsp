@@ -5,11 +5,11 @@
 <head></head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>会员注册</title>
-<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" />
-<script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css" />
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- 引入自定义css文件 style.css -->
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" />
 
 <style>
 body {
@@ -29,19 +29,22 @@ font {
 	padding: 0 10px;
 }
 </style>
+</head>
 <script>
 	$(function(){
 		$("#username").blur(function(){
 			var username = $(this).val();
 			if(username != ""){
-				$.ajax({url:"${pageContext.request.contextPath}/UserServlet",{"method":"checkUsername","username":username},success:function(result){
-					if(result == 1){
-						$("#redwarning").append("该用户名未注册，请注册！").css("font-color","green");
-						
-					}else if(result == 2){
-						$("#redwarning").append("该用户名已注册，请重输！").css("font-color","red");
-					}
-				
+				$.ajax({
+					url:"${pageContext.request.contextPath}/UserServlet",
+					data:{"method":"checkUsername","username":username},
+					type:"Post",
+					success:function(data){
+						if(data.result == "成功"){
+							$("#redwarning").html("该用户名已注册，请重输！").css("color","red");
+						}else if(data.result == "失败"){
+							$("#redwarning").html("该用户名未注册，请注册！").css("color","green");
+						}
 				}});
 			}
 			
@@ -50,10 +53,7 @@ font {
 	
 	});
 
-
-
 </script>
-</head>
 <body>
 
 	<!-- 引入header.jsp -->
@@ -73,7 +73,7 @@ font {
 							<input type="text" class="form-control" id="username"
 								placeholder="请输入用户名">
 						</div>
-						<span class="col-sm-3" id="redwarning"><img src=""></span>
+						<span class="col-sm-4" id="redwarning"></span>
 					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">密码</label>

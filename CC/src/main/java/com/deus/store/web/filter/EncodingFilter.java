@@ -25,7 +25,9 @@ public class EncodingFilter implements Filter{
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest)arg0;
 		HttpServletResponse response = (HttpServletResponse)arg1;
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("application/json;charset=utf-8");
 		MyRequest myRequest = new MyRequest(request);
 		arg2.doFilter(myRequest, response);
 		

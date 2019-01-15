@@ -10,7 +10,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class JDBCUtils {
 	private static DataSource ds;
 	static {
-		 ds = new ComboPooledDataSource("mysql");
+		 ds = new ComboPooledDataSource("mysql2");
 	}
 	/**
 	 * 获取连接池

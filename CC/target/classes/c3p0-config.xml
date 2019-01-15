@@ -100,4 +100,18 @@
 		<property name="minPoolSize">10</property>
 		<property name="maxStatements">0</property>
 	</named-config>
+		<named-config name="mysql2">
+	    <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/cc?characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false</property>
+		<property name="user">root</property>
+		<property name="password">root</property>
+		<property name="automaticTestTable">contest</property>
+		<property name="checkoutTimeout">30000</property>
+		<property name="idleConnectionTestPeriod">30</property>
+		<property name="initialPoolSize">10</property>
+		<property name="maxIdleTime">30</property>
+		<property name="maxPoolSize">25</property>
+		<property name="minPoolSize">10</property>
+		<property name="maxStatements">0</property>
+	</named-config>
 </c3p0-config>
