@@ -4,15 +4,15 @@
 <!-- 登录 注册 购物车... -->
 <div class="container-fluid">
 	<div class="col-md-4">
-		<img src="img/logo2.png" />
+		<img src="${pageContext.request.contextPath}/img/logo2.png" />
 	</div>
 	<div class="col-md-5">
-		<img src="img/header.png" />
+		<img src="${pageContext.request.contextPath}/img/header.png" />
 	</div>
 	<div class="col-md-3" style="padding-top:20px">
 		<ol class="list-inline">
-			<li><a href="${pageContext.request.contextPath}/jsp/login.jsp">登录</a></li>
-			<li><a href="${pageContext.request.contextPath}/jsp/register.jsp">注册</a></li>
+			<li><a href="${pageContext.request.contextPath}/UserServlet?method=loginUI">登录</a></li>
+			<li><a href="${pageContext.request.contextPath}/UserServlet?method=registUI">注册</a></li>
 			<li><a href="${pageContext.request.contextPath}/jsp/cart.jsp">购物车</a></li>
 			<li><a href="${pageContext.request.contextPath}/jsp/order_list.jsp">我的订单</a></li>
 		</ol>
@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">首页</a>
+				<a class="navbar-brand" href="${pageContext.request.contextPath}/jsp/index.jsp">首页</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

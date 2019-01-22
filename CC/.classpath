@@ -41,12 +41,11 @@
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/mchange-commons-java-0.2.11.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/commons-beanutils-1.8.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/commons-logging.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-dbutils-1.4.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-fileupload-1.2.1.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-io-1.4.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jstl.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/standard.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lenovo/Downloads/apache-tomcat-9.0.14-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/commons-dbutils-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/commons-fileupload-1.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/commons-io-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/jstl.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

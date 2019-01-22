@@ -11,7 +11,6 @@ public class BaseServlet extends HttpServlet{
 	private static final long serialVersionUID = -3304988132615787375L;
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//利用反射原理在service定义对应实现方法
 		try {
 			String methodName = req.getParameter("method");
 			if (methodName == null) {

@@ -1,7 +1,9 @@
 package com.deus.store.dao;
 
-public interface UserDao {
+import com.deus.store.domain.User;
+
+public interface UserDao{
 	void login();
-	void register();
+	void save(User user);
 	boolean findByName(String username);
 }
